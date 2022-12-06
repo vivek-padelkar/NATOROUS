@@ -1,27 +1,23 @@
 .row {
-    
   width: $grid-width;
-  background: red;
   margin: 0 auto;
   &:not(:last-child) {
     margin-bottom: $gutter-verticle;
   }
+
   @include clearfix;
-  .col-1of-2 {
-    width: calc((100% - #{$gutter-horizontal}) / 2);
-    background: black;
+
+  [class^='col-'] {
     float: left;
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
     }
   }
 
+  .col-1of-2 {
+    width: calc((100% - #{$gutter-horizontal}) / 2);
+  }
   .col-1of-3 {
-    width: calc((100% - #{$gutter-horizontal}) / 3);
-    background: green;
-    float: left;
-    &:not(:last-child) {
-      display: none;
-    }
+    width: calc((100% - 2 * #{$gutter-horizontal}) / 3);
   }
 }
